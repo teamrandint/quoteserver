@@ -11,7 +11,7 @@ import (
 	"github.com/patrickmn/go-cache"
 	"strconv"
 	"regexp"
-	"seng468/transaction-server/logger"
+	"seng468/quoteserver/logger"
 )
 
 type QuoteReply struct {
@@ -48,7 +48,7 @@ func quote(user string, stock string, transNum int) (decimal.Decimal, error) {
 		d, _ := decimal.NewFromString(quote.(string))
 		return d, nil
 	}
-	conn, err := net.Dial("tcp", "quoteserve.seng:4444")
+	conn, err := net.Dial("tcp", "quoteserve.seng:4450")
 	if err != nil {
 		return decimal.Decimal{}, err
 	}

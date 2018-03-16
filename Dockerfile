@@ -22,4 +22,5 @@ ENV auditport=$auditport
 WORKDIR /app
 COPY --from=build-env /go/src/seng468/quoteserver/quoteserver /app/
 EXPOSE 44459-44459
+EXPOSE 4450
 ENTRYPOINT ./quoteserver
